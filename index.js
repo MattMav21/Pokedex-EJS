@@ -5,15 +5,25 @@ const BASE_URL = "https://pokeapi.co/api/v2/";
 
 let id;
 
-const ENDPOINT_1 = `pokemon/${id}`;
-const ENDPOINT_2 = `/pokemon-species/${id}`;
+const ENDPOINT_1 = `pokemon/${id}`; // For Sprites, Number, name, height, & weight
+const ENDPOINT_2 = `/pokemon-species/${id}`; // For Species & Entry
 
 const app = express();
 const port = 3000;
 
-
-
 app.use(express.static("public"));
+
+
+
+const pokeData = {
+    id: "",
+    name: "",
+    species: "",
+    height: "",
+    weight: "",
+    sprite: "",
+    entry: "",
+};
 
 
 
