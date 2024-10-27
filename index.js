@@ -13,8 +13,6 @@ const port = 3000;
 
 app.use(express.static("public"));
 
-
-
 const pokeData = {
     id: "",
     name: "",
@@ -24,6 +22,18 @@ const pokeData = {
     sprite: "",
     entry: "",
 };
+
+/// ROUTES
+
+app.get("/", async (req, res) => {
+
+});
+
+app.get(`/${id}`, async (req, res) => {
+    
+})
+
+///
 
 
 
