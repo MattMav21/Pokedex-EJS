@@ -26,7 +26,7 @@ const pokeData = {
 /// ROUTES
 
 app.get("/", async (req, res) => {
-
+    res.render("index.ejs");
 });
 
 app.get(`/${id}`, async (req, res) => {
