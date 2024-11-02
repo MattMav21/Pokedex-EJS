@@ -65,3 +65,16 @@ img {
     padding: 50px;
 }
 
+@media (max-height: 520px) {
+    img {
+        height: 10em;
+        width: 10em;
+    }
+}
+
+@media (max-height: 357px) {
+    img {
+        height: 5em;
+        width: 5em;
+    }
+}
