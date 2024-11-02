@@ -37,10 +37,6 @@ html, body {
     align-items: center;
 }
 
-/* #number-box {
-
-} */
-
 #bottom-container {
     grid-column: span 2;
 }
@@ -59,7 +55,6 @@ img {
 }
 
 #entry-box {
-    /* font-size: 1.75em; */
     display: grid;
     font-size: 2.5em;
     padding: 50px;

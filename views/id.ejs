@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet" />
+    <title>Document</title>
+</head>
+<body>
+    <!-- 5 Rows, 2 Columns -->
+    <div id="main-container">
+
+        <% if (locals.pokeData) { %>
+
+            <div id="left-container" class="content-container">
+                <div id="sprite-box" class="data-container">
+                    <img src="<%= pokeData.sprite %>" />
+                </div>
+                <div id="number-box" class="data-container">
+                    No. <%- pokeData.id %>
+                </div>
+            </div>
+    
+            <div id="right-container" class="content-container">
+                <div id="name-box" class="data-container">
+                    <%- pokeData.name %>
+                </div>
+                <div id="species-box" class="data-container">
+                    <%- pokeData.species %>
+                </div>
+                <div id="height-box" class="data-container">
+                    <%- pokeData.height %> dm
+                </div>
+                <div id="weight-box" class="data-container">
+                    <%- pokeData.weight %> hg
+                </div>
+            </div>
+    
+            <div id="bottom-container" class="content-container">
+                <div id="entry-box" class="data-container">
+                    <%- pokeData.entry %>
+                </div>
+            </div>
+
+        <% } else { %>
+            <div>Nothing</div>
+        <% } %>
+
+
+    </div>
+
+    
+</body>
+</html>
