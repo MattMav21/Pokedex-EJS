@@ -28,25 +28,12 @@ const pokeData = {
 app.get("/", async (req, res) => {
     
     try {
-        let id = 1;
+        let id = 150;
         let data1 = await axios.get(BASE_URL + `pokemon/${id}`);
         let data2 = await axios.get(BASE_URL + `/pokemon-species/${id}`);        
         
         data1 = data1.data;
         data2 = data2.data;
-        
-        console.log("DATA 1", data1);
-        console.log("DATA 1: ID", data1.id);
-        console.log("DATA 1: Name", data1.name);
-        console.log("DATA 1: Height", data1.height);
-        console.log("DATA 1: Weight", data1.weight);
-        console.log("DATA 1", data1.sprites.front_default);
-
-
-        console.log("DATA 2: Species", data2.genera[7].genus);
-        console.log("DATA 2: Entry", data2.flavor_text_entries[0].flavor_text);
-
-        // const id = data1.id;
 
         pokeData.id = data1.id;
         pokeData.name = data1.name;
@@ -57,21 +44,6 @@ app.get("/", async (req, res) => {
         pokeData.entry = data2.flavor_text_entries[0].flavor_text;
 
         res.render("index.ejs", {pokeData: pokeData});
-
-        // const pokeData = {
-        //     id: "",
-        //     name: "",
-        //     species: "",
-        //     height: "",
-        //     weight: "",
-        //     sprite: "",
-        //     entry: "",
-        // };
-
-        // pokeData.id = 
-
-
-
     } catch (error) {
         console.error("error");
         res.render("index.ejs");

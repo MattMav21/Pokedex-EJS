@@ -25,6 +25,12 @@
     width: 100%;
 }
 
+.content-container > * {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 #bottom-container {
     grid-column: span 2;
 }
