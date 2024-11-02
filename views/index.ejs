@@ -13,30 +13,30 @@
         <% if (locals.pokeData) { %>
 
             <div id="left-container" class="content-container">
-                <div id="sprite-box" class="data-container">
+                <div id="sprite-box" class="data-container" style="background-color: red;">
                     <img src="<%= pokeData.sprite %>" />
                 </div>
-                <div id="number-box" class="data-container">
-                    <%- pokeData.id %>
+                <div id="number-box" class="data-container" style="background-color: orange;">
+                    No. <%- pokeData.id %>
                 </div>
             </div>
     
             <div id="right-container" class="content-container">
-                <div id="name-box" class="data-container">
+                <div id="name-box" class="data-container" style="background-color: yellow;">
                     <%- pokeData.name %>
                 </div>
-                <div id="species-box" class="data-container">
+                <div id="species-box" class="data-container" style="background-color: green;">
                     <%- pokeData.species %>
                 </div>
-                <div id="height-box" class="data-container">
+                <div id="height-box" class="data-container" style="background-color: blue;">
                     <%- pokeData.height %> dm
                 </div>
-                <div id="weight-box" class="data-container">
+                <div id="weight-box" class="data-container" style="background-color: indigo;">
                     <%- pokeData.weight %> hg
                 </div>
             </div>
     
-            <div id="bottom-container" class="content-container">
+            <div id="bottom-container" class="content-container" style="background-color: violet;">
                 <div id="entry-box" class="data-container">
                     <%- pokeData.entry %>
                 </div>
