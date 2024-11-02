@@ -15,6 +15,7 @@ html, body {
 }
 
 #main-container {
+    background-color: rgb(160, 162, 93);
     width: 100vw;
     display: grid;
     height: auto;
