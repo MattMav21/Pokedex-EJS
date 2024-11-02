@@ -29,25 +29,22 @@ app.get("/", async (req, res) => {
     
     try {
         let id = 1;
-        console.log("HITS");
-        let data1 = await axios.get(BASE_URL + `pokemon/${id}`);
-        let data2 = await axios.get(BASE_URL + `/pokemon-species/${id}`);        
+        // let data1 = await axios.get(BASE_URL + `pokemon/${id}`);
+        // let data2 = await axios.get(BASE_URL + `/pokemon-species/${id}`);        
         
-        data1 = data1.data;
-        data2 = data2.data;
-
-        console.log("DATA Converted!")
+        // data1 = data1.data;
+        // data2 = data2.data;
         
-        console.log("DATA 1", data1);
-        console.log("DATA 1: ID", data1.id);
-        console.log("DATA 1: Name", data1.name);
-        console.log("DATA 1: Height", data1.height);
-        console.log("DATA 1: Weight", data1.weight);
-        console.log("DATA 1", data1.sprites.front_default);
+        // console.log("DATA 1", data1);
+        // console.log("DATA 1: ID", data1.id);
+        // console.log("DATA 1: Name", data1.name);
+        // console.log("DATA 1: Height", data1.height);
+        // console.log("DATA 1: Weight", data1.weight);
+        // console.log("DATA 1", data1.sprites.front_default);
 
 
-        console.log("DATA 2: Species", data2.genera[7].genus);
-        console.log("DATA 2: Entry", data2.flavor_text_entries[0].flavor_text);
+        // console.log("DATA 2: Species", data2.genera[7].genus);
+        // console.log("DATA 2: Entry", data2.flavor_text_entries[0].flavor_text);
 
     } catch (error) {
         console.error("error");
