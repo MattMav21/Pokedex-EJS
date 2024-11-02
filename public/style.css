@@ -86,3 +86,15 @@ img {
         font-size: 1.5em;
     }
 }
+
+@media (max-width: 580px) {
+    #entry-box {
+        font-size: 2.0em;
+    }
+}
+
+@media (max-width: 412) {
+    #entry-box {
+        font-size: 0.5em;
+    }
+}
