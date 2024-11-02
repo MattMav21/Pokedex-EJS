@@ -10,7 +10,14 @@
     <!-- 5 Rows, 2 Columns -->
     <div id="main-container">
 
-        <% if (locals.pokeData) { %>
+        <% if (locals.menuDataList) { %>
+            <% menuDataList.forEach(data => { %>
+                <ul style="list-style: none;">
+                    <li>
+                        <a href="/<%- data.id %>"> <%= data.id %>. <%= data.name %> </a>
+                    </li>
+                </ul>
+            <% }); %>
 
         <% } else { %>
             <div>Nothing</div>

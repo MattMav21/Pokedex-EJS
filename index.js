@@ -13,11 +13,6 @@ const port = 3000;
 
 app.use(express.static("public"));
 
-let menuData = {
-    id: "",
-    name: "",
-}
-
 let menuDataList = [];
 
 const pokeData = {
@@ -34,32 +29,36 @@ const pokeData = {
 
 app.get("/", async (req, res) => {
 
-    let menuDataList = [];
-
     if (menuDataList.length === 0) {
-        for (let i = 1; i <= 151; i++) {
-            let data = await axios.get(BASE_URL + `pokemon/${i}`);
-            data = data.data;
-    
-            menuData.id = data.id;
-            menuData.name = data.name;
-        }
+        try {
+            for (let i = 1; i <= 151; i++) {
+                let data = await axios.get(BASE_URL + `pokemon/${i}`);
+                data = data.data;
         
+                let menuData = {
+                    id: data.id,
+                    name: data.name,
+                }
+        
+                menuDataList.push(menuData);
+            }
+        } catch (error) {
+            console.error(error);
+            res.render("index.ejs");
+        }
     }
 
 
-    res.render("index.ejs");
+    res.render("index.ejs", {menuDataList: menuDataList});
 });
 
-app.get(`/${id}`, async (req, res) => {
-    // console.log("HITS");
-    // let id = id;
+app.get("/:id", async (req, res) => {
 
-    // let data1 = await axios.get(BASE_URL + ENDPOINT_1);
-    // let data2 = await axios.get(BASE_URL + ENDPOINT_2);
+    const id = req.params.id;
 
-    // console.log("DATA 1", data1);
-    // console.log("DATA 2", data2);
+    console.log(id);
+
+    console.log("id route hits");
 
     try {
         let data1 = await axios.get(BASE_URL + `pokemon/${id}`);
@@ -76,7 +75,7 @@ app.get(`/${id}`, async (req, res) => {
         pokeData.sprite = data1.sprites.front_default;
         pokeData.entry = data2.flavor_text_entries[0].flavor_text;
 
-        res.render("index.ejs", {pokeData: pokeData});
+        res.render("id.ejs", {pokeData: pokeData});
     } catch (error) {
         console.error("error");
         res.render("index.ejs");
