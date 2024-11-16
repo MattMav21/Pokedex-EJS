@@ -14,7 +14,10 @@
             <% menuDataList.forEach(data => { %>
                 <ul style="list-style: none;">
                     <li>
-                        <a href="/<%- data.id %>"> <%= data.id %>. <%= data.name %> </a>
+                        <a href="/<%- data.id %>"> 
+                            <%- data.id %>. <br/>
+                            <img src="/5.svg" id="pokeball"/> <%= data.name %> 
+                        </a>
                     </li>
                 </ul>
             <% }); %>

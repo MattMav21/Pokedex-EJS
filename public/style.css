@@ -99,3 +99,8 @@ a {
     text-decoration: none;
     text-transform: uppercase;
 }
+
+#pokeball {
+    height: 12px;
+    width: 12px;
+}
